@@ -1,0 +1,27 @@
+replicaCount: 1
+
+image:
+  repository: akhileshpatel123/simple-laravel_application
+  tag: "v5"
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 9000
+
+appName: laravel
+
+namespace: laravel-app
+
+config:
+  DB_CONNECTION: "mysql"
+  DB_HOST: "mysql-app-mysql"
+  DB_PORT: "3306"
+  DB_DATABASE: "laravel"
+  DB_USERNAME: "laravel_user"
+  APP_ENV: "production"
+  APP_DEBUG: "false"
+  APP_KEY: "base64:H2b7fzOGniGCzfQDF2DlCvTPpcU00QOoplmbP3F8SqA="
+
+secrets:
+  DB_PASSWORD: "password"
